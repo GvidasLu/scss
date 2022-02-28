@@ -1,0 +1,76 @@
+// keiciam visu button spalva sukurtame variable(kintamojo) \/
+// $primaryBtn : rgb(231, 212, 37);
+// keiciam viso texto spalva sukurtame sitame variable(kintamajame) \/ 
+// $textColor: rgb(145, 5, 5);
+
+// norint kad veiktu spalvos tai turim importinti nauja faila _variables(kintamieji).scss ir rasom taip:
+@import "./variables\(kintamieji\)";
+
+// norint kad veiktu musu naujai sukurtas failas _header.scss reikia importo, rasom taip:
+@import "./header";
+
+// header {
+//     background-color: aquamarine;
+//     display: flex;
+//     justify-content: center;
+//     color: $textColor;
+//     // nesting vietoje rasant (du kartus header ir header button) galime rasyti taip:
+//     button {
+//         background: $primaryBtn;
+//     // norint padaryti hover rasom taip:
+//         &:hover {
+//             background: rebeccapurple;
+//         }
+//         &::after {
+//             content: " Hellooolooo";
+//         } 
+//     }
+// }
+
+.info {
+    p {
+        background-color: $primaryBtn;
+        color: $textColor;
+    }
+}
+
+// sitos vietos nebereikia nes iraseme i header elementa
+// header button {
+//     background: $primaryBtn;
+// }
+
+// .contact button {
+//     background: $primaryBtn;
+// }
+
+// taip pat galime ir sitame faile irasyti jau sukurta @mixin ir duoti jo pavadinima norimam elementui: 
+// 3) galime suteikti ir cia norima flexa, tai i skliaustelius rasome row ir musu flex directionas pasikeicia, nes esame ji nurode @mixin skliausteliu vietoje:
+.contact {
+    // @include flexCenter(row, pink);
+// 4) galina inherit(paveldejima ir kitaip perasyti su @extend:
+    @extend header;
+    background: lightcoral;
+    // jeigu dar karta parasome background su kita spalva, tada overridinam sena spalva:
+    background: blueviolet;
+
+// taip pat galime naudoti ir calc dalykus, tokius kaip + - / * :
+    width: 100% - 20%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// YT tutorial linkas: https://www.youtube.com/watch?v=Zz6eOVaaelI&ab_channel=DevEd
